@@ -13,3 +13,12 @@ MinGW предназначен для сборки исполняемых фай
 
 ваша проблема вызвана компиляцией с заголовками из одной версии openssl, но линковкой с другой:
 В OpenSSL 1.1.1 ERR_put_errorэто функция, а в 3.0 это макрос. Если вы скомпилировали с 1.1.1, но затем скомпоновали с 3.0, вы получите сообщение об ошибке, подобное этому.
+
+
+https://qna.habr.com/q/313645
+
+Не могу найти библиотеку #include <avr/pgmspace.h>
+
+#include <avr/pgmspace.h>
+const prog_char isrDebug[] = { "\r\nISR debug " };
+extern const prog_char isrDebug[] PROGMEM;
